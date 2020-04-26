@@ -14,7 +14,7 @@ const ImagePlaceHolder = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wC
 const useStyles = makeStyles((theme) => ({
     root: {
         height: 'auto',
-        width: 'fit-content',
+        maxWidth: 345,
         flexGrow: 1
     },
     media: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
       border: '4px solid #fff'
     },
     control: {
-        padding: theme.spacing(6),
+        padding: theme.spacing(2),
       },
   }));
 
@@ -36,13 +36,16 @@ const Movie = ({movie}) => {
 
     return (
 <React.Fragment>
-<Grid container className={classes.root} spacing={4}>
-      <Grid item xs={12}>
-        <Grid container justify="center">        
-    <Paper className={classes.root} elevation={10}>
+      <Grid className={classes.root} item xs={12}>
+        <Grid>        
+    <Paper  elevation={20}>
         <Card>
         <CardActionArea>
-        <CardMedia  className={classes.media}  title={movie.Title} image={poster}/>
+        <CardMedia  
+            className={classes.media}
+            title={movie.Title} 
+            image={poster}
+        />
             <CardContent>
                 <Typography  component="h6" gutterBottom>
                         <b>{movie.Title}</b>
@@ -56,7 +59,7 @@ const Movie = ({movie}) => {
     </Paper>
     </Grid>  
       </Grid>
-     </Grid>
+
 </React.Fragment>    
 );
 }

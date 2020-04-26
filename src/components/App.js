@@ -5,7 +5,7 @@ import Movie from './Movie';
 import Search from './Search';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
+
 
 
 
@@ -46,23 +46,14 @@ const App = () => {
       });
   };
 
-  const useStyles = makeStyles({
-    root: {
-      flexGrow: 4,
-    }
-  }); 
-
-  const classes = useStyles();
-
-
 
 
   return (
     <div className="App">
      <Header text="OMDB Muvi" />
      <Search search={search} />
-     <p className="App-intro">Sharing a few of our favorite movies</p>
-     <Grid container className={classes.root} spacing={2}>
+     <p className="App-intro">Sharing a few of our favorite movies and shows</p>
+     <Grid container justify="center" spacing={2}>
      
        {loading && !errorMessage ? (
         <div><CircularProgress /></div>
